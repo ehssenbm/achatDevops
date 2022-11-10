@@ -77,6 +77,14 @@ pipeline{
             }
         }
         
+        stage('tag') {
+            steps{
+
+                sh """ docker image tag f22 ehssen/achat """
+                
+            }
+        }
+        
         
         
         
