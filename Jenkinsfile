@@ -51,6 +51,31 @@ pipeline{
             }
         }
         
+        stage('Build Docker Image') {
+            steps {
+                script {
+                        sh """ docker build -t ehssen/achat ."""
+                    
+                  
+                }
+            }
+        }       
+        
+        stage('Login') {
+            steps{
+                
+                sh """ docker login -u "ehssen" -p "ehssen123" docker.io  """
+            }
+        }
+        
+        
+        stage('push to DockerHub') {
+            steps{
+
+                sh """ docker push  ehssen/achat """
+                
+            }
+        }
         
        
         
