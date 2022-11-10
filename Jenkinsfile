@@ -49,7 +49,7 @@ pipeline{
             steps{
                 sh 'mvn deploy -DskipTests'
             }
-        }
+        }*/
         
         stage('Build Docker Image') {
             steps {
@@ -60,7 +60,7 @@ pipeline{
                 }
             }
         }   
-       */
+       
 
         
         stage('Login') {
