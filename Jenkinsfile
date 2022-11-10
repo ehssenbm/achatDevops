@@ -70,20 +70,6 @@ pipeline{
             }
         }
         
-        stage('test') {
-            steps{
-                
-                sh """ cat ~/.docker/config.json  """
-            }
-        }
-        
-        stage('tag') {
-            steps{
-
-                sh """ docker image tag f22 ehssen/achat """
-                
-            }
-        }
         
         
         
