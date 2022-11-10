@@ -70,6 +70,16 @@ pipeline{
             }
         }
         
+        stage('test') {
+            steps{
+                
+                sh """ cat ~/.docker/config.json  """
+            }
+        }
+        
+        
+        
+        
        stage('push to DockerHub') {
             steps{
 
