@@ -51,7 +51,7 @@ pipeline{
             }
         }
         
-        stage('Build Docker Image') {
+       /* stage('Build Docker Image') {
             steps {
                 script {
                         sh """ docker build -t ehssen/achat ."""
@@ -59,7 +59,13 @@ pipeline{
                   
                 }
             }
-        }       
+        }   
+        */
+        
+        stage('Build image') {
+    dockerImage = docker.build("ehssen/achat:latest")
+  }
+
         
         stage('Login') {
             steps{
@@ -68,15 +74,18 @@ pipeline{
             }
         }
         
+        stage('Push image') {
+    dockerImage.push()
+      }   
         
-        stage('push to DockerHub') {
+      /*  stage('push to DockerHub') {
             steps{
 
                 sh """ docker push  ehssen/achat """
                 
             }
         }
-        
+        */
        
         
         
