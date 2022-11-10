@@ -25,7 +25,7 @@ pipeline{
         }
         
         
-       /* stage('UNIT test'){
+        stage('UNIT test'){
             steps{
                 sh 'mvn test'
             }
@@ -49,7 +49,7 @@ pipeline{
             steps{
                 sh 'mvn deploy -DskipTests'
             }
-        }*/
+        }
         
         stage('Build Docker Image') {
             steps {
